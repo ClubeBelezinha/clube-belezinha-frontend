@@ -1,1 +1,25 @@
-<div>login works!</div>
+<div class="background-image">
+  <section class="container-sm" style="max-width: 440px; height: 100vh;">
+    <div class="d-flex flex-column align-items-center">
+      <img src="../../assets/svg/logo-white.svg" height="290px" alt="logo">
+    </div>
+    <form class="form-group">
+      <div>
+        <label for="email" class="form-label"></label>
+        <input id="email" formControlName="email" type="email" class="form-control inputForm" placeholder="usuário ou e-mail" />
+      </div>
+      <div>
+        <label for="password" class="form-label"></label>
+        <input id="password" formControlName="password" type="password" class="form-control inputForm" placeholder="senha de acesso" />
+      </div>
+      <div class="d-grid gap-2">
+        <label for="password" class="form-label"></label>
+        <button class="btn btn-primary btnColor" type="button" >Login</button>
+      </div>
+    </form>
+    <div class="d-flex mt-5 container-bottom-button justify-content-center">
+      <p class="dont-have-login-text">Solicite o acesso ao administrador!</p>
+
+    </div>
+  </section>
+</div>
