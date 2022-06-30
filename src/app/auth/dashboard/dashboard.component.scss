@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+
+.background-image {
+  background-image: url('../../../assets/svg/background-image.svg');
+  background-size: cover;
+  height: 50vh;
+  background-color: $color3;
+}
+
+.menu-section {
+  background-color: $color7;
+  height: 70vh;
+  border-top-right-radius: 80px 80px;
+  border-top-left-radius: 80px 80px;
+}
