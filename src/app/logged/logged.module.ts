@@ -1,6 +1,6 @@
 
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from "../app.component";
 import { LoggedComponent } from "./logged.component";
@@ -24,7 +24,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
   providers: [
     // httpInterceptorsProviders,
   ],
-  schemas: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class LoggedModule { }

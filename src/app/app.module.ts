@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LoggedModule } from './logged/logged.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+// import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    SignUpComponent,
+    // SignUpComponent
   ],
   imports: [
     BrowserModule,
