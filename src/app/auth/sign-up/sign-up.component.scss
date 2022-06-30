@@ -14,16 +14,39 @@
   }
 }
 
-label {
-  background-color: rgba(210, 226, 226, 0.6);
-  border-radius: 12px;
-  padding: 4px;
-  font-weight: bold;
-}
-
 .btnColor {
   background-color: $color3;
   border-radius: 15px;
   color: white;
   font-weight: bold;
+}
+
+.background-image {
+  background-image: url('../../../assets/svg/background-image.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-label {
+  font-size: 18px;
+  color: $color2;
+  font-weight: 700;
+}
+
+.switch-label {
+  font-size: 16px;
+  color: $color2;
+  font-weight: 700;
+}
+
+.container-bottom-button {
+  background-color: $color6;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.title {
+  font-size: 24px;
+  color: $color2;
 }

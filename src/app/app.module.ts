@@ -4,10 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
-import { LoggedModule } from './logged/logged.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
-// import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +19,6 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LoggedModule,
     NgbModule,
   ],
   providers: [],
