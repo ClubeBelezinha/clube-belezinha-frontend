@@ -1,0 +1,117 @@
+<section class="container-sm p-0" style="max-width: 380px; position: relative;">
+  <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-4 px-3">
+    <a href="courses">
+      <img src="../../../assets/svg/menu-icon-green.png" height="32px" width="32px" alt="logo">
+    </a>
+    <h1 class="title">Inscrição</h1>
+    <div style="width: 32px;"></div>
+  </div>
+
+  <div class="background-image"></div>
+
+  <div class="container-sm">
+    <div class="info-text py-2">{{values.title}}</div>
+    <div class="description-text">Quando pensamos em mudar o visual a primeira coisa que nos vem à cabeça é um cabelo
+      novo, e aí partimos para a
+      pesquisa de corte de cabelo
+    </div>
+    <div class="py-4">
+      <div class="info-text">Duração: {{values.duration}} horas</div>
+      <div class="info-text">Valor: {{values.value}}</div>
+    </div>
+  </div>
+  <div class="container-sm mt-2">
+    <aside id="info-block">
+      <section class="file-marker">
+        <div>
+          <div class="box-title">
+            FORMAS DE PAGAMENTO
+          </div>
+          <div class="box-contents">
+            <div id="audit-trail">
+              <img src="../../../assets/svg/payment-methods.png" width="100%" alt="logo">
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+    <div class="d-flex justify-content-end mt-5">
+      <button (click)="toggleShowComponent()" class="btn btn-primary btnColor">
+        Se inscrever e pagar
+      </button>
+    </div>
+  </div>
+
+  <div [ngClass]="paymentComponent ? 'payment-show p-3' : 'payment-hide'">
+    <div class="d-flex flex-column align-items-center">
+      <div class="info-text">{{values.title}}</div>
+      <div class="description-text">Escolha a opção de turma abaixo:</div>
+    </div>
+    <div class="my-3">
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label switch-label pt-1" for="customSwitch1">Início 05/06/2022 (Seg. e Qua.) | 19h
+          até
+          21h</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+        <label class="custom-control-label switch-label pt-1" for="customSwitch2">Início 05/06/2022 (Seg. e Qua.) | 19h
+          até
+          21h</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch3">
+        <label class="custom-control-label switch-label pt-1" for="customSwitch3">Início 05/06/2022 (Seg. e Qua.) | 19h
+          até
+          21h</label>
+      </div>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch4">
+        <label class="custom-control-label switch-label pt-1" for="customSwitch4">Início 05/06/2022 (Seg. e Qua.) | 19h
+          até
+          21h</label>
+      </div>
+    </div>
+
+    <div>
+      <div class="info-text">Formas de pagamento</div>
+      <div class="d-flex">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="customSwitch5">
+          <label class="custom-control-label switch-label pt-1" for="customSwitch5">Cartão de crédito</label>
+        </div>
+        <div class="custom-control custom-switch pl-5">
+          <input type="checkbox" class="custom-control-input" id="customSwitch6">
+          <label class="custom-control-label switch-label pt-1" for="customSwitch6">PIX</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column">
+          <div class="switch-label mb-2">Cartão cadastrado</div>
+          <div class="card-container-block">****8526 5261</div>
+        </div>
+        <div>
+          <form class="form-group">
+            <div class="input-cvv">
+              <div class="switch-label mb-2">Confirme o CVV</div>
+              <input id="cvv" type="number" class="form-control inputForm input-shadow" placeholder="CVV"
+                formControlName="cvv" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-2">
+      <a type="button" class="btn btn-primary btn-sm btnColor p-2" [routerLink]="['/my-courses']"
+        [queryParams]="{title: values.title, value: values.value, duration: values.duration}">Concluir</a>
+      <!-- <button (click)="toggleShowComponent()" class="btn btn-primary btnColor">
+        Concluir
+      </button> -->
+    </div>
+  </div>
+</section>

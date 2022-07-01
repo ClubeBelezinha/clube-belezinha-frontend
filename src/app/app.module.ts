@@ -7,13 +7,17 @@ import { LoginComponent } from './auth/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CoursesPageComponent } from './auth/courses-page/courses-page.component';
+import { SubscriptionPageComponent } from './auth/subscription-page/subscription-page.component';
+import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    CoursesPageComponent
+    CoursesPageComponent,
+    SubscriptionPageComponent,
+    MyCoursesComponent
   ],
   imports: [
     BrowserModule,

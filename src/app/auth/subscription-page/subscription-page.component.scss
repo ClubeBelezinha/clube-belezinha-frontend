@@ -1,0 +1,90 @@
+@import "../../../styles.scss";
+
+.title {
+  font-size: 26px;
+  color: $color2;
+}
+
+.background-image {
+  background-image: url('../../../assets/svg/subscription-logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+}
+
+.info-text {
+  font-size: 16px;
+  color: $color2;
+  font-weight: 600;
+}
+
+.description-text {
+  font-size: 14px;
+  color: $color2;
+}
+
+#info-block section {
+  border: 1px solid $color2;
+}
+
+.file-marker>div {
+  padding: 0 3px;
+  margin-top: -0.8em;
+
+}
+
+.box-title {
+  font-size: 12px;
+  color: $color2;
+  background: white none repeat scroll 0 0;
+  display: inline-block;
+  padding: 0 2px;
+  margin-left: 7.4em;
+}
+
+.btnColor {
+  background-color: $color3;
+  border-radius: 12px;
+  color: #FFFF;
+  border-color: #FFFF;
+  box-shadow: none !important;
+}
+
+.payment-hide {
+  display: none;
+}
+
+.payment-show {
+  position: absolute;
+  right: 26px;
+  bottom: 0;
+  z-index: 9999;
+
+  height: 400px;
+  background-color: #fff;
+  border-radius: 16px;
+  -webkit-box-shadow: 10px 10px 15px -7px rgba(85, 85, 85, 0.7);
+  box-shadow: 10px 10px 15px -7px rgba(85, 85, 85, 0.7);
+}
+
+.switch-label {
+  font-size: 12px;
+  color: $color2;
+}
+
+.input-cvv {
+  max-width: 100px;
+}
+
+.card-container-block {
+  background-color: #E6E6E6;
+  color: #c6c6c6;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.input-shadow {
+  -webkit-box-shadow: 5px 5px 15px -7px rgba(85, 85, 85, 0.7);
+  box-shadow: 5px 5px 15px -7px rgba(85, 85, 85, 0.7);
+}
