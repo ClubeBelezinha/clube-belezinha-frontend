@@ -7,6 +7,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CoursesPageComponent } from './auth/courses-page/courses-page.component';
+import { AuthenticationService } from 'src/service/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { CoursesPageComponent } from './auth/courses-page/courses-page.component
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
