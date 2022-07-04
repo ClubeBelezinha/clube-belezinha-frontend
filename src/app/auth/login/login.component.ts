@@ -31,7 +31,7 @@ ngOnInit(): void {
     this.request = Object.assign({}, this.form.value);
     
     this.authenticationService.authenticate(this.request).subscribe(
-      success => this.router.navigate(['cadastro']),
+      success => this.router.navigate(['dashboard']),
       error => error,
     );
   }
