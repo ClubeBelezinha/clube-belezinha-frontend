@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .background-image {
-  background: linear-gradient(180deg, $color3 70%, $color7 30%);
+  background: linear-gradient(180deg, $color3 50%, $color7 50%);
 }
 
 .menu-section {
@@ -40,46 +40,19 @@
 
 
 .sidenav {
-  background-color: #0E2F04;
-  transition: all .3s ease;
+  background-color: $color4;
+  transition: all .2s ease;
   position: fixed;
   z-index: 1;
   top: 0;
-  width: 5rem;
-  height: 100vh;
-  box-shadow: 0.063rem 0 1.25rem 0 black;
-  overflow: scroll;
-  -ms-overflow-style: none !important;
-  scrollbar-width: none !important;
-  border-radius: 0px 10px 10px 0px;
-
-  .logo-container {
-    display: flex;
-    align-items: center;
-    padding: 0.938rem 0.938rem 0 0.938rem;
-    width: 100%;
-
-    .logo {
-      padding-left: 0.5rem;
-    }
-
-    .logo-text {
-      margin-left: 1.5rem;
-      font-size: 24px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .icon-group {
-      display: flex;
-      margin-left: auto;
-      border: none;
-    }
-  }
+  width: 0;
+  height: 280px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .sidenav-collapsed {
-  width: 16.5625rem;
+  width: 12rem;
 }
 
 .sidenav-nav {
@@ -106,7 +79,6 @@
       text-decoration: none;
       border-radius: 2px 6px 6px 2px;
       transition: color .3s ease;
-      padding-left: 1rem;
 
 
       .sidenav-link-text {
@@ -114,159 +86,33 @@
         line-height: 19.88px;
         font-weight: 400;
         color: #EDEDED;
-        padding-left: 1rem;
+      }
+
+      .sidenav-link-logout {
+        font-size: 14px;
+        line-height: 19.88px;
+        font-weight: 400;
+        color: #F84F47;
       }
 
       .sidenav-link-release {
         font-size: 9px;
         line-height: 15.8px;
         font-weight: 800;
-        color: #C6D94C;
+        color: $color8;
         padding-left: 0.6rem;
       }
     }
   }
-
-  .sidenav-nav-item-exit {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 100%;
-
-    .sidenav-nav-link-exit {
-      display: flex;
-      align-items: center;
-      height: 2rem;
-      color: #F1564C;
-      text-decoration: none;
-      border-radius: 2px 6px 6px 2px;
-      transition: color .3s ease;
-      padding-left: 1rem;
-
-
-      .sidenav-link-text-exit {
-        padding-left: 1rem;
-      }
-    }
-  }
-}
-
-.sidenav-nav-item:hover {
-  .sidenav-nav-link {
-    background-color: #325013;
-    border-left: 2px solid #C6D94C;
-  }
-}
-
-.active {
-  background-color: #325013;
-  border-left: 2px solid #C6D94C;
-
-  .sidenav-link-text {
-    color: #fff !important;
-    font-weight: 700 !important;
-  }
-}
-
-.user-info-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 40px;
-  padding-bottom: 20px;
-
-  .user-image-container {}
-
-  .user-info-text {
-    padding-top: 20px;
-  }
-
-  .user-info-name {
-    color: #fff;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 700;
-  }
-
-  .user-info-email {
-    color: #fff;
-    font-size: 14px;
-    line-height: 19px;
-    font-weight: 400;
-    padding-top: 6px;
-  }
 }
 
 .nav-menu {
-  margin-left: 5rem;
-  height: 4rem;
-  border-bottom: 1px solid #EAEAEA;
+  background-color: $color3;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 20px;
 }
 
 .nav-menu-collapsed {
-  margin-left: 16.5625rem;
-}
-
-.nav-body {
-  margin-left: 5rem;
-}
-
-.nav-body-collapsed {
-  margin-left: 16.5625rem;
-}
-
-.menu-opener-container {
-  cursor: pointer;
-}
-
-.sidenav::-webkit-scrollbar {
-  display: none !important;
-}
-
-.partitions-container {
-  padding-top: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #C6D94C;
-  width: 100%;
-
-  .partitions-text {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #fff;
-  }
-}
-
-.address-key-container {
-  background-color: #F8F8F8;
-  border-radius: 100px;
-
-  .address-key-container-text {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 19.88px;
-    color: #020202;
-  }
-
-  .address-key-container-code {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.88px;
-    color: #020202;
-  }
-}
-
-.copy-container {
-  cursor: pointer;
-}
-
-@media (max-width: 891px) {
-  .address-key-container {
-    display: none !important;
-  }
-}
-
-@media (max-width: 538px) {
-  .nav-body-collapsed {
-    margin-left: 5rem;
-  }
+  margin-left: 11rem;
 }
