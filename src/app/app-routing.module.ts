@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClassesPageComponent } from './auth/class-page copy/classes-page.component';
 import { CoursesPageComponent } from './auth/courses-page/courses-page.component';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'courses', component: CoursesPageComponent },
   { path: 'subscription', component: SubscriptionPageComponent },
   { path: 'my-courses', component: MyCoursesComponent },
+  { path: 'classes', component: ClassesPageComponent },
 ]
 
 @NgModule({

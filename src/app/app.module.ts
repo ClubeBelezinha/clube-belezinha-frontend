@@ -15,6 +15,7 @@ import { CourseService } from 'src/service/course.service';
 import { UserService } from 'src/service/user.service';
 import { ClassService } from 'src/service/class.service';
 import { StudentClassService } from 'src/service/studentClass.service';
+import { ClassesPageComponent } from './auth/class-page copy/classes-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StudentClassService } from 'src/service/studentClass.service';
     SignUpComponent,
     CoursesPageComponent,
     SubscriptionPageComponent,
-    MyCoursesComponent
+    MyCoursesComponent,
+    ClassesPageComponent,
   ],
   imports: [
     BrowserModule,
