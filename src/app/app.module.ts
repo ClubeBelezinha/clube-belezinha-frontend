@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubscriptionPageComponent } from './auth/subscription-page/subscription-page.component';
 import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
 import { CourseService } from 'src/service/course.service';
+import { UserService } from 'src/service/user.service';
+import { ClassService } from 'src/service/class.service';
+import { StudentClassService } from 'src/service/studentClass.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,7 @@ import { CourseService } from 'src/service/course.service';
     NgbModule,
     HttpClientModule
   ],
-  providers: [AuthenticationService, CourseService],
+  providers: [AuthenticationService, CourseService, UserService, ClassService, StudentClassService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

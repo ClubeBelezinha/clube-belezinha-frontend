@@ -20,7 +20,6 @@ export class AuthenticationService extends BaseService {
         super();
     }
     authenticate(dto: AuthenticateRequestDto): Observable<AuthenticateResponseDto> {
-        console.log('dto', dto);
         return this.httpClient
             .post(`${this.url}/authenticate`, dto, this.anonymousHeader())
             .pipe(
