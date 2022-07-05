@@ -3,9 +3,9 @@ import { StudentClassService } from 'src/service/studentClass.service';
 import LocalStorageUtil, { LocalStorageKeys } from 'src/util/localStorage.util';
 
 @Component({
-  selector: 'app-classes-page',
-  templateUrl: './classes-page.component.html',
-  styleUrls: ['./classes-page.component.scss']
+  selector: 'app-student-classes-page',
+  templateUrl: './student-classes-page.component.html',
+  styleUrls: ['./student-classes-page.component.scss']
 })
 
 export class StudentClassesPageComponent implements OnInit {
