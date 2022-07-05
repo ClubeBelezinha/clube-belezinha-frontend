@@ -51,6 +51,14 @@
   box-shadow: none !important;
 }
 
+.btnColorCancel {
+  background-color: $color7;
+  border-radius: 12px;
+  color: #FFFF;
+  border-color: #FFFF;
+  box-shadow: none !important;
+}
+
 .payment-hide {
   display: none;
 }
@@ -61,7 +69,7 @@
   bottom: 0;
   z-index: 9999;
 
-  height: 400px;
+  height: 100px;
   background-color: #fff;
   border-radius: 16px;
   -webkit-box-shadow: 10px 10px 15px -7px rgba(85, 85, 85, 0.7);
