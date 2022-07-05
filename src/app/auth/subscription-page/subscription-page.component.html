@@ -20,7 +20,7 @@
       <div class="info-text">Valor: {{values.value}}</div>
     </div>
   </div>
-  <div class="container-sm mt-2">
+  <!-- <div class="container-sm mt-2">
     <aside id="info-block">
       <section class="file-marker">
         <div>
@@ -35,15 +35,16 @@
         </div>
       </section>
     </aside>
-    <div class="d-flex justify-content-end mt-5">
-      <button (click)="toggleShowComponent()" class="btn btn-primary btnColor">
-        Se inscrever e pagar
-      </button>
-    </div>
+  </div> -->
+
+  <div class="d-flex justify-content-end mt-3">
+    <button (click)="toggleShowComponent()" class="btn btn-primary btnColor">
+      Se inscrever e pagar
+    </button>
   </div>
 
   <div [ngClass]="paymentComponent ? 'payment-show p-3' : 'payment-hide'">
-    <div class="d-flex flex-column align-items-center">
+    <!-- <div class="d-flex flex-column align-items-center">
       <div class="info-text">{{values.title}}</div>
       <div class="description-text">Escolha a opção de turma abaixo:</div>
     </div>
@@ -72,11 +73,11 @@
           até
           21h</label>
       </div>
-    </div>
+    </div> -->
 
     <div>
-      <div class="info-text">Formas de pagamento</div>
-      <div class="d-flex">
+      <div class="info-text">Deseja confirmar sua inscrição?</div>
+      <!-- <div class="d-flex">
         <div class="custom-control custom-switch">
           <input type="checkbox" class="custom-control-input" id="customSwitch5">
           <label class="custom-control-label switch-label pt-1" for="customSwitch5">Cartão de crédito</label>
@@ -85,10 +86,10 @@
           <input type="checkbox" class="custom-control-input" id="customSwitch6">
           <label class="custom-control-label switch-label pt-1" for="customSwitch6">PIX</label>
         </div>
-      </div>
+      </div> -->
     </div>
 
-    <div class="mt-3">
+    <!-- <div class="mt-3">
       <div class="d-flex justify-content-between">
         <div class="d-flex flex-column">
           <div class="switch-label mb-2">Cartão cadastrado</div>
@@ -104,14 +105,12 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="d-flex justify-content-end mt-2">
+      <a type="button" class="btn btn-primary btn-sm btnColorCancel p-2 mr-2" (click)="toggleShowComponent()">Cancelar</a>
       <a type="button" class="btn btn-primary btn-sm btnColor p-2" [routerLink]="['/my-courses']"
-        [queryParams]="{title: values.title, value: values.value, duration: values.duration}">Concluir</a>
-      <!-- <button (click)="toggleShowComponent()" class="btn btn-primary btnColor">
-        Concluir
-      </button> -->
+        [queryParams]="{title: values.title, value: values.value, duration: values.duration}">Confirmar</a>
     </div>
   </div>
 </section>
