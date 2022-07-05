@@ -1,0 +1,62 @@
+@import "../../../styles.scss";
+
+.card-style {
+  background-color: #FFFF;
+  border-radius: 20px;
+  padding: 6px;
+  -webkit-box-shadow: 2px 2px 5px 1.5px rgba(0, 0, 0, 0.46);
+  box-shadow: 2px 2px 5px 1.5px rgba(0, 0, 0, 0.46);
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.card-infos {
+  padding-left: 20px;
+}
+
+.btnColor {
+  background-color: $color3;
+  border-radius: 12px;
+  color: #FFFF;
+  border-color: #FFFF;
+  box-shadow: none !important;
+}
+
+.title {
+  font-size: 26px;
+  color: $color2;
+}
+
+.card-title {
+  font-size: 15px;
+  color: $color3;
+  font-weight: bold;
+
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+.card-subtext {
+  font-size: 14px;
+  color: $color3;
+}
+
+.subscription-container {
+  background-color: #5AAC75;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.course-info-container {
+  background-color: $color3;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+}

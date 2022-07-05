@@ -1,0 +1,52 @@
+@import "../../../styles.scss";
+
+.inputForm {
+  -webkit-box-shadow: 2px 2px 5px 1.5px rgba(0, 0, 0, 0.46);
+  box-shadow: 2px 2px 5px 1.5px rgba(0, 0, 0, 0.46);
+  border-radius: 12px;
+  font-size: 18;
+  border-color: $color7;
+  box-shadow: none !important;
+
+  &:focus {
+    border-color: transparent !important;
+    outline: none;
+  }
+}
+
+.btnColor {
+  background-color: $color3;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.background-image {
+  background-image: url('../../../assets/svg/background-image.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-label {
+  font-size: 18px;
+  color: $color2;
+  font-weight: 700;
+}
+
+.switch-label {
+  font-size: 14px;
+  color: $color2;
+  font-weight: 700;
+}
+
+.container-bottom-button {
+  background-color: $color6;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.title {
+  font-size: 24px;
+  color: $color2;
+}

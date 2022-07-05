@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+.btnColor {
+  background-color: $color3;
+  border-radius: 12px;
+  color: #FFFF;
+  font-weight: bold;
+  border-color: #FFFF;
+  box-shadow: none !important;
+}
+
+.background-image {
+  background-image: url('../../../assets/svg/background-image.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inputForm {
+  border-radius: 12px;
+  font-size: 18;
+  border-color: $color7;
+  box-shadow: none !important;
+}
+
+.link-style {
+  text-decoration: none;
+  color: $color3;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 6px;
+}
+
+.dont-have-login-text {
+  font-size: 16;
+  margin: 0;
+  color: $color5;
+}
+
+.container-bottom-button {
+  background-color: $color6;
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.register-btn {
+  font-size: 18px;
+  text-decoration: none !important;
+  color: $color3;
+  font-weight: 700;
+}
