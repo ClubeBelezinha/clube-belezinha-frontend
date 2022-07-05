@@ -1,48 +1,137 @@
-<div class="background-image" style="height: 500vh;">
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''" style="z-index: 1000 !important;">
+  <div class="logo-container">
+    <div class="logo">
+      <!-- <img src="../../assets/svg/mini-logo.svg" width="34px" alt="mini logo"> -->
+    </div>
+    <div class="icon-group" *ngIf="collapsed">
+      <div class="mr-4">
+        <!-- <img src="../../assets/svg/notifications-icon.svg" width="20px" height="16px" alt="mini logo"> -->
+      </div>
+      <div style="cursor: pointer;">
+        <!-- <img src="../../assets/svg/user-icon.svg" width="20px" height="16px" alt="mini logo"> -->
+      </div>
+    </div>
+  </div>
+  <div *ngIf="collapsed" class="user-info-container">
+    <div class="user-image-container">
+      <!-- <img src="../../../assets/svg/user-image.svg" width="140px" alt="user image"> -->
+    </div>
+    <div class="user-info-text">
+      <!-- <div class="user-info-name">{{user.name}}</div>
+      <div class="user-info-email">{{user.email}}</div> -->
+    </div>
+  </div>
+
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item">
+      <a class="sidenav-nav-link">
+        <!-- <img [src]="[data.icon]" width="20px" height="18px" alt="icons group"> -->
+        <span class="sidenav-link-text" *ngIf="collapsed">label</span>
+        <span class="sidenav-link-release" *ngIf="collapsed">label</span>
+      </a>
+      <div class="sidenav-nav-link">
+        <!-- <img [src]="[data.icon]" width="20px" height="18px" alt="icons group"> -->
+        <span class="sidenav-link-text" *ngIf="collapsed">label</span>
+        <span class="sidenav-link-release" *ngIf="collapsed">label</span>
+      </div>
+    </li>
+    <div class="partitions-container" *ngIf="collapsed">
+      <div class="partitions-text">
+        Transações
+      </div>
+    </div>
+
+
+    <li class="sidenav-nav-item-exit">
+      <a class="sidenav-nav-link-exit">
+        <!-- <img src="../../../assets/svg/exit-icon.svg" width="20px" height="18px" alt="exit icon"> -->
+        <span class="sidenav-link-text-exit" *ngIf="collapsed">Sair</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="nav-menu d-flex justify-content-between" [ngClass]="collapsed ? 'nav-menu-collapsed' : ''">
+  <div class="d-flex align-items-center">
+    <div class="menu-opener-container ml-2">
+      <!-- <img src="../../assets/svg/menu-icon.svg" width="20px" height="16px" alt="menu logo" (click)="toggleCollapse()"> -->
+    </div>
+
+    <div class="d-flex address-key-container ml-4 align-items-center justify-content-center">
+      <div class="p-2">
+        <span class="address-key-container-text">Meu endereço: </span>
+        <span class="address-key-container-code">Meu endereço: </span>
+      </div>
+      <div class="px-2 copy-container" style="cursor: pointer;">
+        <!-- <img src="../../assets/svg/copy-icon.svg" width="20px" height="16px" alt="copy logo"> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center mr-1">
+    <!-- <div class="mr-2">
+      <img src="../../assets/svg/search-icon.svg" width="20px" height="16px" alt="search logo">
+    </div> -->
+    <div  style="cursor: pointer;">
+      <!-- <img src="../../assets/svg/settings-icon.svg" width="20px" height="16px" alt="settings logo"> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="background-image" style="height: 100vh;">
   <div>
-    <section class="container-sm p-0" style="height: 40vh;">
+    <section class="container-sm p-0 d-flex flex-column align-content-between justify-content-between"
+      style="height: 30vh;">
+
+
       <div class="d-flex align-items-center justify-content-between px-4 pt-4">
-        <a href="">
+        <a>
           <img src="../../../assets/svg/menu-icon.png" height="32px" width="32px" alt="logo">
         </a>
         <a>
           <img src="../../../assets/svg/user-icon.png" height="48px" width="48px" alt="logo">
         </a>
       </div>
-      <div class="pl-4 d-flex align-items-end dashboard-title mt-5">Dashboard</div>
 
-      <div class="menu-section mt-5" style="height: 100vh;">
-        <div class="d-flex justify-content-around pt-5">
-          <a class="cards p-2" href="courses">
-            <img src="../../../assets/svg/1.png" height="80px" width="80px" alt="logo">
-            <div class="pt-1">Cursos</div>
-          </a>
-          <div class="cards p-2">
-            <img src="../../../assets/svg/2.png" height="80px" width="80px" alt="logo">
-            <div class="pt-1">Certificados</div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-around pt-4">
-          <div class="cards p-2">
-            <img src="../../../assets/svg/3.png" height="80px" width="80px" alt="logo">
-            <div class="pt-1">Marketplace</div>
-          </div>
-          <div class="cards p-2">
-            <img src="../../../assets/svg/4.png" height="80px" width="80px" alt="logo">
-            <div class="pt-1">Meus cursos</div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-around pt-4">
-          <div class="cards p-2">
-            <img src="../../../assets/svg/5.png" height="80px" width="80px" alt="logo">
-            <div class="pt-1">Financeiro</div>
-          </div>
-          <div class="p-2" style="height: 80px; width: 130px;">
-          </div>
-        </div>
-      </div>
+      <div class="pl-4 d-flex align-items-end dashboard-title mb-3">Dashboard</div>
+
     </section>
 
-   
+    <div class="menu-section">
+      <div class="d-flex justify-content-around pt-5">
+        <a class="cards p-2" href="courses">
+          <img src="../../../assets/svg/1.png" height="80px" width="80px" alt="logo">
+          <div class="pt-1">Cursos</div>
+        </a>
+        <div class="cards p-2">
+          <img src="../../../assets/svg/2.png" height="80px" width="80px" alt="logo">
+          <div class="pt-1">Certificados</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around pt-4">
+        <div class="cards p-2">
+          <img src="../../../assets/svg/3.png" height="80px" width="80px" alt="logo">
+          <div class="pt-1">Marketplace</div>
+        </div>
+        <div class="cards p-2">
+          <img src="../../../assets/svg/4.png" height="80px" width="80px" alt="logo">
+          <div class="pt-1">Meus cursos</div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around pt-4">
+        <div class="cards p-2">
+          <img src="../../../assets/svg/5.png" height="80px" width="80px" alt="logo">
+          <div class="pt-1">Financeiro</div>
+        </div>
+        <div class="p-2" style="height: 80px; width: 130px;">
+        </div>
+      </div>
+    </div>
   </div>
 </div>

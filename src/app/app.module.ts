@@ -17,6 +17,7 @@ import { ClassService } from 'src/service/class.service';
 import { StudentClassService } from 'src/service/studentClass.service';
 import { ClassesPageComponent } from './auth/class-page/classes-page.component';
 import { StudentClassesPageComponent } from './auth/student-class-page/student-classes-page.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { StudentClassesPageComponent } from './auth/student-class-page/student-c
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [AuthenticationService, CourseService, UserService, ClassService, StudentClassService],
   bootstrap: [AppComponent]
