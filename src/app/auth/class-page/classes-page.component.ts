@@ -21,7 +21,7 @@ export class ClassesPageComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.classService.getStudentClassList().subscribe(
+    this.classService.getClassByUser().subscribe(
       success => {
         console.log(success);
         this.classes = success;
