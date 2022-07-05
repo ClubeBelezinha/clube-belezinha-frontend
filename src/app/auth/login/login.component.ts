@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticateRequestDto } from 'src/app/dtos/authenticate/authenticate-request.dto';
+import { AuthenticateResponseDto } from 'src/app/dtos/authenticate/authenticate-response.dto';
+import { AuthetincatedUserDto } from 'src/app/dtos/authenticate/authenticated-user.dto';
 import { AuthenticationService } from 'src/service/authentication.service';
 
 @Component({
@@ -31,8 +33,18 @@ ngOnInit(): void {
     this.request = Object.assign({}, this.form.value);
     
     this.authenticationService.authenticate(this.request).subscribe(
-      success => this.router.navigate(['dashboard']),
+      success => this.runAuthenticateSuccess(success),
       error => error,
     );
+  }
+
+  runAuthenticateSuccess(success: AuthenticateResponseDto): void {
+
+    this.authenticationService.setAuthenticatedUser(
+      new AuthetincatedUserDto(success.email, success.token),
+    );
+
+    this.router.navigate(['dashboard']);
+
   }
 }

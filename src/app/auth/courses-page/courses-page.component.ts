@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from 'src/service/course.service';
+import LocalStorageUtil, { LocalStorageKeys } from 'src/util/localStorage.util';
 
 @Component({
   selector: 'app-courses-page',
@@ -8,38 +10,29 @@ import { Component, OnInit } from '@angular/core';
 
 export class CoursesPageComponent implements OnInit {
 
-  courses = [
-    {
-      title: 'Treinamento de corte',
-      value: 'R$ 350',
-      duration: 6,
-    },
-    {
-      title: 'Hidratação e Cauterização',
-      value: 'R$ 450',
-      duration: 12,
-    },
-    {
-      title: 'Reconstrução e Nutrição',
-      value: 'R$ 320',
-      duration: 6,
-    },
-    {
-      title: 'Como fazer escova',
-      value: 'Gratuíto',
-      duration: 6,
-    },
-    {
-      title: 'Mechas',
-      value: 'Gratuíto',
-      duration: 6,
-    },
-  ];
+  
+  courses = [];
 
 
-  constructor() { }
+  constructor(
+    private courseService: CourseService,
+  ) { 
+  }
 
   ngOnInit(): void {
+    
+    this.courseService.getCourseList().subscribe(
+      success => {
+        console.log(success);
+        this.courses = success;
+      },
+      error => console.log(error)
+    );
+
   }
 
 }
+function jwt_decode(accessToken: any): any {
+  throw new Error('Function not implemented.');
+}
+

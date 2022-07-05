@@ -9,13 +9,18 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CoursesPageComponent } from './auth/courses-page/courses-page.component';
 import { AuthenticationService } from 'src/service/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SubscriptionPageComponent } from './auth/subscription-page/subscription-page.component';
+import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
+import { CourseService } from 'src/service/course.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    CoursesPageComponent
+    CoursesPageComponent,
+    SubscriptionPageComponent,
+    MyCoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     HttpClientModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
