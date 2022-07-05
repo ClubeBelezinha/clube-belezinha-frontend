@@ -3,20 +3,20 @@
     <div class="d-flex flex-column align-items-center">
       <img src="../../assets/svg/logo-white.svg" height="290px" alt="logo">
     </div>
-    <form class="form-group">
+    <form [formGroup]="form" class="form-group">
       <div>
         <label for="email" class="form-label"></label>
-        <input id="email" formControlName="email" type="email" class="form-control inputForm"
+        <input id="email" name="email" formControlName="email" type="email" class="form-control inputForm"
           placeholder="usuário ou e-mail" />
       </div>
       <div>
         <label for="password" class="form-label"></label>
-        <input id="password" formControlName="password" type="password" class="form-control inputForm"
+        <input id="password" name="password" formControlName="password" type="password" class="form-control inputForm"
           placeholder="senha de acesso" />
       </div>
       <div>
         <label for="password" class="form-label"></label>
-        <a href="dashboard" class="btn btn-block btn-primary btnColor" type="button">Login</a>
+        <button class="btn btn-block btn-primary btnColor" (click)="login()"  type="button">Login</button>
       </div>
     </form>
     <div class="d-flex mt-5 container-bottom-button justify-content-center">

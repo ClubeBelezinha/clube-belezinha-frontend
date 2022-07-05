@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  payloadKey: '78e5ecc2-18f2-4cba-8268-a07f8a414af7',
+  apis: {
+    accessControl: 'http://localhost:4000/',
+  }
 };
 
 /*
