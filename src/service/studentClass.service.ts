@@ -22,7 +22,7 @@ export class StudentClassService extends BaseService {
 
   getStudentClassList(): Observable<StudentClassListResponseDto[]> {
     return this.httpClient
-      .get(`${this.url}/studentClass/list`, this.authorizedHeader())
+      .get(`${this.url}studentClass/list`, this.authorizedHeader())
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)
