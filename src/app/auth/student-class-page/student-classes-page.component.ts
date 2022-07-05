@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentClassService } from 'src/service/studentClass.service';
-import LocalStorageUtil, { LocalStorageKeys } from 'src/util/localStorage.util';
+import { ClassService } from 'src/service/class.service';
 
 @Component({
   selector: 'app-student-classes-page',
@@ -15,13 +14,13 @@ export class StudentClassesPageComponent implements OnInit {
 
 
   constructor(
-    private studentClassService: StudentClassService,
+    private classService: ClassService,
   ) { 
   }
 
   ngOnInit(): void {
     
-    this.studentClassService.getStudentClassList().subscribe(
+    this.classService.getClassByUser().subscribe(
       success => {
         console.log(success);
         this.classes = success;
