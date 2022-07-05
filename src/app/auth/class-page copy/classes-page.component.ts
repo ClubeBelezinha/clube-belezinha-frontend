@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from 'src/service/course.service';
+import { ClassService } from 'src/service/class.service';
 import LocalStorageUtil, { LocalStorageKeys } from 'src/util/localStorage.util';
 
 @Component({
-  selector: 'app-courses-page',
-  templateUrl: './courses-page.component.html',
-  styleUrls: ['./courses-page.component.scss']
+  selector: 'app-classes-page',
+  templateUrl: './classes-page.component.html',
+  styleUrls: ['./classes-page.component.scss']
 })
 
-export class CoursesPageComponent implements OnInit {
+export class ClassesPageComponent implements OnInit {
 
   
-  courses = [];
+  classes = [];
 
 
   constructor(
-    private courseService: CourseService,
+    private classService: ClassService,
   ) { 
   }
 
   ngOnInit(): void {
     
-    this.courseService.getCourseList().subscribe(
+    this.classService.getStudentClassList().subscribe(
       success => {
         console.log(success);
-        this.courses = success;
+        this.classes = success;
       },
       error => console.log(error)
     );

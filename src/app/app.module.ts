@@ -7,8 +7,15 @@ import { LoginComponent } from './auth/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CoursesPageComponent } from './auth/courses-page/courses-page.component';
+import { AuthenticationService } from 'src/service/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
 import { SubscriptionPageComponent } from './auth/subscription-page/subscription-page.component';
 import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
+import { CourseService } from 'src/service/course.service';
+import { UserService } from 'src/service/user.service';
+import { ClassService } from 'src/service/class.service';
+import { StudentClassService } from 'src/service/studentClass.service';
+import { ClassesPageComponent } from './auth/class-page copy/classes-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +24,8 @@ import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
     SignUpComponent,
     CoursesPageComponent,
     SubscriptionPageComponent,
-    MyCoursesComponent
+    MyCoursesComponent,
+    ClassesPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,8 +33,9 @@ import { MyCoursesComponent } from './auth/my-courses/my-courses.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationService, CourseService, UserService, ClassService, StudentClassService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
