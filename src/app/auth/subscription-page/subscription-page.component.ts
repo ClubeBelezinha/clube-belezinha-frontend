@@ -57,6 +57,7 @@ export class SubscriptionPageComponent implements OnInit {
               this.studentClass.registerStudentClass(this.request).subscribe(
                 success => {
                   this.router.navigate(['/studentsClass']);
+                  alert("Cadastrado com sucesso !")
                 },
                 error => console.log(error)
                 

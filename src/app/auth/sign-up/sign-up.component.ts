@@ -44,8 +44,9 @@ export class SignUpComponent implements OnInit {
         this.userService.register(this.request).subscribe(
           success => {
             this.router.navigate(['']);
+            alert("Usuário cadastrado com sucesso!")
           },
-          error => console.log(error)
+          error =>  alert("E-mail já cadastrado!")
         );
       }else{
         alert("Senhas diferentes!");
