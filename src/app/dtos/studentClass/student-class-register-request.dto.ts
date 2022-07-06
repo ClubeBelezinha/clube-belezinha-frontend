@@ -1,13 +1,11 @@
+import { ClassListResponseDto } from "../class/class-list-response.dto";
 import { CourseListResponseDto } from "../course/course-list-response.dto";
+import { UserListResponseDto } from "../user/user-list-response.dto";
 
 
 export abstract class StudentClassRegisterRequestDto {
-  name: string;
-  days: string;
-  hourStart: string;
-  hourEnd: string;
-  numberPlaces: number;
-  course: CourseListResponseDto;
-  teacher: string;
-  registrationDate: Date;
+  grade?: string;
+  class?: ClassListResponseDto;
+  course?: CourseListResponseDto;
+  user?: UserListResponseDto;
 }

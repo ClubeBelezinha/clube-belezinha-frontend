@@ -29,9 +29,9 @@ export class CourseService extends BaseService {
       );
   }
 
-  getCourseById(id: string): Observable<CourseListResponseDto> {
+  getCourseById(id: string): Observable<CourseListResponseDto[]> {
     return this.httpClient
-      .get(`${this.url}/course/id/${id}`, this.authorizedHeader())
+      .get(`${this.url}course/id/${id}`, this.authorizedHeader())
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)

@@ -31,9 +31,9 @@ export class ClassService extends BaseService {
       );
   }
 
-  getClassById(id: string): Observable<ClassListResponseDto> {
+  getClassById(id: string): Observable<ClassListResponseDto[]> {
     return this.httpClient
-      .get(`${this.url}/class/id/${id}`, this.authorizedHeader())
+      .get(`${this.url}class/id/${id}`, this.authorizedHeader())
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)
@@ -58,9 +58,9 @@ export class ClassService extends BaseService {
       );
   }
 
-  updateClass(_id: string, dto: ClassChangeRequestDto): Observable<ClassChangeResponseDto> {
+  updateClass(dto: ClassChangeRequestDto): Observable<ClassChangeResponseDto> {
     return this.httpClient
-      .patch(`${this.url}/class/${_id}`,
+      .put(`${this.url}class`,
         dto, this.authorizedHeader())
       .pipe(
         map(this.extractData),

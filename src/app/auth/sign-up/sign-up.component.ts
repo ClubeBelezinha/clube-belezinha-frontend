@@ -16,25 +16,36 @@ export class SignUpComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private router: Router,) {
-      this.form = this.formBuilder.group({
-        password: ['', [Validators.required]],
-        email: ['', [Validators.required]],
-        cpf: ['', [Validators.required]],
-      })
-   }
+    private router: Router) {
+    this.form = this.formBuilder.group({
+      password: ['', [Validators.required]],
+      email: ['', [Validators.email, Validators.required]],
+      cpf: ['', [Validators.required]],
+      nickname: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
+      customSwitch1: [true, [Validators.required]],
+    })
+  }
 
   ngOnInit(): void {
 
   }
+ 
   register() {
-    this.request = Object.assign({}, this.form.value);
-    this.userService.register(this.request).subscribe(
-      success => {
-        this.router.navigate(['']);
-      },
-      error => console.log(error)
-    );
+    console.log(this.form.value);
+    if (!this.form.valid) {
+      console.log("Formulário inválido");
+      return;
+    } else {
+      this.request = Object.assign({}, this.form.value);
+      this.userService.register(this.request).subscribe(
+        success => {
+          this.router.navigate(['']);
+        },
+        error => console.log(error)
+      );
+    }
+
 
   }
 }
