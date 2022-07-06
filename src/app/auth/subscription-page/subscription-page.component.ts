@@ -59,7 +59,7 @@ export class SubscriptionPageComponent implements OnInit {
                   this.router.navigate(['/studentsClass']);
                   alert("Cadastrado com sucesso !")
                 },
-                error => console.log(error)
+                error =>  alert("Erro ao cadastrar !")
                 
               );
               
