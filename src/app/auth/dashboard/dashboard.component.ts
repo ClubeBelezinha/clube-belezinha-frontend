@@ -10,6 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DashboardComponent implements OnInit {
 
+  collapsed = false;
+
+  toggleCollapse(): void {
+    this.collapsed = !this.collapsed;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

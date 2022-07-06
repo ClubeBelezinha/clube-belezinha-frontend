@@ -1,32 +1,13 @@
 @import "../../../styles.scss";
 
-// .background-image {
-//   background-image: url('../../../assets/svg/background-image.svg');
-//   background-size: cover;
-//   height: 50vh;
-//   background-color: $color3;
-// }
-
-// .menu-section {
-//   background-color: $color7;
-//   height: 70vh;
-//   border-top-right-radius: 80px 80px;
-//   border-top-left-radius: 80px 80px;
-// }
-
-
 .background-image {
-  background-image: url('../../../assets/svg/background-image.svg');
-  background-size: cover;
-  background-color: $color3;
+  background: linear-gradient(180deg, $color3 50%, $color7 50%);
 }
 
 .menu-section {
   background-color: $color7;
-  max-height: 100vh;
   border-top-right-radius: 80px 80px;
   border-top-left-radius: 80px 80px;
-  overflow: scroll;
 }
 
 .menu-section::-webkit-scrollbar {
@@ -42,7 +23,6 @@
   font-size: 22px;
   color: #fff;
   font-weight: 700;
-
 }
 
 .cards {
@@ -54,4 +34,85 @@
   -webkit-box-shadow: 10px 10px 15px -7px rgba(85, 85, 85, 0.7);
   box-shadow: 10px 10px 15px -7px rgba(85, 85, 85, 0.7);
   border-radius: 10px;
+}
+
+
+
+
+.sidenav {
+  background-color: $color4;
+  transition: all .2s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 0;
+  height: 280px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sidenav-collapsed {
+  width: 12rem;
+}
+
+.sidenav-nav {
+  list-style: none;
+  padding-top: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(80% - 3.65rem);
+  cursor: pointer;
+  padding: 0.965rem;
+
+
+  .sidenav-nav-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+
+    .sidenav-nav-link {
+      display: flex;
+      align-items: center;
+      height: 2rem;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 2px 6px 6px 2px;
+      transition: color .3s ease;
+
+
+      .sidenav-link-text {
+        font-size: 14px;
+        line-height: 19.88px;
+        font-weight: 400;
+        color: #EDEDED;
+      }
+
+      .sidenav-link-logout {
+        font-size: 14px;
+        line-height: 19.88px;
+        font-weight: 400;
+        color: #F84F47;
+      }
+
+      .sidenav-link-release {
+        font-size: 9px;
+        line-height: 15.8px;
+        font-weight: 800;
+        color: $color8;
+        padding-left: 0.6rem;
+      }
+    }
+  }
+}
+
+.nav-menu {
+  background-color: $color3;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 20px;
+}
+
+.nav-menu-collapsed {
+  margin-left: 11rem;
 }

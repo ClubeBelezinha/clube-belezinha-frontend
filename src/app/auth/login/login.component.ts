@@ -34,7 +34,7 @@ ngOnInit(): void {
     
     this.authenticationService.authenticate(this.request).subscribe(
       success => this.runAuthenticateSuccess(success),
-      error => error,
+      error => alert("E-mail ou senha incorretos !"),
     );
   }
 

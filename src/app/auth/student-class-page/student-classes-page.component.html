@@ -3,7 +3,7 @@
     <a href="dashboard">
       <img src="../../../assets/svg/menu-icon-green.png" height="32px" width="32px" alt="logo">
     </a>
-    <h1 class="title">Alunos na turma</h1>
+    <h1 class="title">Meus cursos</h1>
     <div style="width: 32px;"></div>
   </div>
   <div *ngFor="let classes of classes;" class="d-flex align-items-center justify-content-between card-style mb-4">
@@ -12,10 +12,10 @@
         <img src="../../../assets/svg/logo-card.png" height="40px" alt="logo">
       </div>
       <div class="card-infos">
-        <p class="card-title">Turma {{classes.class.name}}</p>
-        <p class="card-title">Curso {{classes.course.name}}</p>
-        <p class="card-subtext">nome: {{classes.user.name}}</p>
-        <p class="card-subtext">email: {{classes.user.email}}</p>
+        <p class="card-title">{{classes.course.name}}</p>
+        <p class="card-subtext">Turma: {{classes.name}}</p>
+        <p class="card-subtext">Dias: {{classes.days}}</p>
+        <p class="card-subtext">Hora Inicio: {{classes.hourStart}} Término: {{classes.hourEnd}} </p>
       </div>
     </div>
   </div>
