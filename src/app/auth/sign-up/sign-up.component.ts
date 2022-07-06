@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserRegisterRequestResponseDto } from 'src/app/dtos/user/user-register-request-response.dto';
 import { UserService } from 'src/service/user.service';
@@ -23,10 +23,10 @@ export class SignUpComponent implements OnInit {
       cpf: ['', [Validators.required]],
       nickname: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
-      customSwitch1: [true, [Validators.required]],
+      customSwitch1: new FormControl(false, [Validators.requiredTrue]),
     })
   }
-
+  
   ngOnInit(): void {
 
   }
@@ -37,13 +37,22 @@ export class SignUpComponent implements OnInit {
       console.log("Formulário inválido");
       return;
     } else {
-      this.request = Object.assign({}, this.form.value);
-      this.userService.register(this.request).subscribe(
-        success => {
-          this.router.navigate(['']);
-        },
-        error => console.log(error)
-      );
+      let pass = this.form.get('password').value;
+      let confirmPass = this.form.get('confirmPassword').value
+      if(pass == confirmPass && pass && confirmPass){
+        this.request = Object.assign({}, this.form.value);
+        this.userService.register(this.request).subscribe(
+          success => {
+            this.router.navigate(['']);
+          },
+          error => console.log(error)
+        );
+      }else{
+        alert("Senhas diferentes!");
+        
+        return
+      }
+     
     }
 
 
