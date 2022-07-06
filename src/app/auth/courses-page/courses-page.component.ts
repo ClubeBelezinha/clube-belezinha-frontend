@@ -25,6 +25,7 @@ export class CoursesPageComponent implements OnInit {
     
     this.courseService.getCourseList().subscribe(
       success => {
+        console.log(success);
         this.courses = success;
       },
       error => console.log(error)
@@ -32,6 +33,7 @@ export class CoursesPageComponent implements OnInit {
 
     this.classService.getClassByUser().subscribe(
       success => {
+        console.log(success);
         this.classes = success;
       },
       error => console.log(error)

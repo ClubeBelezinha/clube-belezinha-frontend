@@ -49,7 +49,7 @@ export class StudentClassService extends BaseService {
 
   registerStudentClass(dto: StudentClassRegisterRequestDto): Observable<StudentClassRegisterRequestDto> {
     return this.httpClient
-      .post(`${this.url}/studentClass/registerStudentClass`, dto, this.authorizedHeader())
+      .post(`${this.url}studentClass/registerStudentClass`, dto, this.authorizedHeader())
       .pipe(
         map(this.extractData),
         catchError(this.serviceError)
