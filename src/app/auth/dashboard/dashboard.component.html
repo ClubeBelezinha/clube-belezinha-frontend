@@ -3,20 +3,21 @@
     <ul class="sidenav-nav">
       <li class="sidenav-nav-item">
         <div class="sidenav-nav-link">
-          <span class="sidenav-link-text" *ngIf="collapsed">Home</span>
+          
+          <a class="sidenav-link-text"  [routerLink]="['/dashboard']" *ngIf="collapsed">Home</a>
         </div>
         <div class="sidenav-nav-link">
-          <span class="sidenav-link-text" *ngIf="collapsed">Cursos</span>
+          <span class="sidenav-link-text" [routerLink]="['/courses']" *ngIf="collapsed">Cursos</span>
         </div>
         <div class="sidenav-nav-link">
-          <span class="sidenav-link-text" *ngIf="collapsed">Certificados</span>
+          <span class="sidenav-link-text" [routerLink]="['/dashboard']" *ngIf="collapsed">Certificados</span>
         </div>
         <div class="sidenav-nav-link">
           <span class="sidenav-link-text" *ngIf="collapsed">Marketplace</span>
           <span class="sidenav-link-release" *ngIf="collapsed">(Em breve)</span>
         </div>
         <div class="sidenav-nav-link">
-          <span class="sidenav-link-text" *ngIf="collapsed">Meus cursos</span>
+          <span class="sidenav-link-text" [routerLink]="['/studentsClass']" *ngIf="collapsed">Meus cursos</span>
         </div>
         <div class="sidenav-nav-link">
           <span class="sidenav-link-text" *ngIf="collapsed">Financeiro</span>
