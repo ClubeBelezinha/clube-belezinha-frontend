@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClassService } from 'src/service/class.service';
+import { StudentClassService } from 'src/service/studentClass.service';
 
 @Component({
   selector: 'app-student-classes-page',
@@ -14,13 +15,13 @@ export class StudentClassesPageComponent implements OnInit {
 
 
   constructor(
-    private classService: ClassService,
+    private studentClassService: StudentClassService,
   ) { 
   }
 
   ngOnInit(): void {
     
-    this.classService.getClassByUser().subscribe(
+    this.studentClassService.getClassByUser().subscribe(
       success => {
         console.log(success);
         this.classes = success;

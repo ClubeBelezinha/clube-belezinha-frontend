@@ -44,6 +44,7 @@ export class SubscriptionPageComponent implements OnInit {
   subscription(courseId:any, classesId:any){
 
     var classes;
+    console.log(classesId.classesId);
     if(classesId){
       this.classService.getClassById(classesId.classesId).subscribe(
         success => {
@@ -51,9 +52,10 @@ export class SubscriptionPageComponent implements OnInit {
           classes.numberPlaces = classes.numberPlaces - 1;
           const student = {
             grade: "0",
-            class: classes,
-            course: classes.course
+            class: classes._id,
+            course: classes.course._id
            }
+           console.log(student);
           this.classService.updateClass(classes).subscribe(
             success => {
               this.request = Object.assign({}, student);

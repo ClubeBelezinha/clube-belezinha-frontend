@@ -47,6 +47,15 @@ export class StudentClassService extends BaseService {
       );
   }
 
+  getClassByUser(): Observable<StudentClassListResponseDto[]> {
+    return this.httpClient
+      .get(`${this.url}studentClass/byUser/`, this.authorizedHeader())
+      .pipe(
+        map(this.extractData),
+        catchError(this.serviceError)
+      );
+  }
+
   registerStudentClass(dto: StudentClassRegisterRequestDto): Observable<StudentClassRegisterRequestDto> {
     return this.httpClient
       .post(`${this.url}studentClass/registerStudentClass`, dto, this.authorizedHeader())

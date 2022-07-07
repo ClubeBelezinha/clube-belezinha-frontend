@@ -6,17 +6,16 @@
     <h1 class="title">Cursos</h1>
     <div style="width: 32px;"></div>
   </div>
-  <div *ngFor="let course of courses;" class="d-flex align-items-center justify-content-between card-style mb-6">
-    <div *ngFor="let classes of classes">
+  <div *ngFor="let classes of classes" class="d-flex align-items-center justify-content-between card-style mb-4">
       <div class="d-flex align-items-center">
         <div>
           <img src="../../../assets/svg/logo-card.png" height="40px" alt="logo">
         </div>
 
         <div class="card-infos">
-          <p class="card-title">{{course.name || ''}}</p>
-          <p class="card-subtext">Valor:R$ {{course.value || ''}}</p>
-          <p class="card-subtext">Duração: {{course.workload || ''}} horas</p>
+          <p class="card-title">{{classes.course.name || ''}}</p>
+          <p class="card-subtext">Valor:R$ {{classes.course.value || ''}}</p>
+          <p class="card-subtext">Duração: {{classes.course.workload || ''}} horas</p>
           <p class="card-subtext">Dias: {{classes.days || ''}}</p>
           <p class="card-subtext">Hora Inicio: {{classes.hourStart || ''}}</p>
           <p class="card-subtext">Término: {{classes.hourEnd || ''}}</p>
@@ -24,8 +23,7 @@
       </div>
       <div>
         <a type="button" class="btn btn-primary btn-sm btnColor p-2" [routerLink]="['/subscription']"
-          [queryParams]="{courseId:course._id, classesId:classes._id, title: course.name, value: course.value, duration: course.workload}">Inscrição</a>
+          [queryParams]="{courseId:classes.course._id, classesId:classes._id, title: classes.course.name, value: classes.course.value, duration: classes.course.workload}">Inscrição</a>
       </div>
-    </div>
   </div>
 </section>
