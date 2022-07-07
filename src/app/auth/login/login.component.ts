@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AuthenticateRequestDto } from 'src/app/dtos/authenticate/authenticate-request.dto';
 import { AuthenticateResponseDto } from 'src/app/dtos/authenticate/authenticate-response.dto';
 import { AuthetincatedUserDto } from 'src/app/dtos/authenticate/authenticated-user.dto';
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authenticationService: AuthenticationService,
     private formBuilder: FormBuilder,
-    private router: Router,) {
+    private router: Router,
+    private toastrService: ToastrService) {
     this.form = this.formBuilder.group({
       password: ['', [Validators.required]],
       email: ['', [Validators.required]],
@@ -34,7 +36,9 @@ ngOnInit(): void {
     
     this.authenticationService.authenticate(this.request).subscribe(
       success => this.runAuthenticateSuccess(success),
-      error => alert("E-mail ou senha incorretos !"),
+      error => this.toastrService.error('E-mail ou senha incorretos!', 'Negado', {
+        progressBar: true
+      }),
     );
   }
 

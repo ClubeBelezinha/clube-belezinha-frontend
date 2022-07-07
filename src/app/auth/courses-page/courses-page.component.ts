@@ -11,27 +11,16 @@ import LocalStorageUtil, { LocalStorageKeys } from 'src/util/localStorage.util';
 
 export class CoursesPageComponent implements OnInit {
 
-  
-  courses = [];
   classes = [];
 
   constructor(
-    private courseService: CourseService,
     private classService: ClassService,
   ) { 
   }
 
   ngOnInit(): void {
-    
-    this.courseService.getCourseList().subscribe(
-      success => {
-        console.log(success);
-        this.courses = success;
-      },
-      error => console.log(error)
-    );
 
-    this.classService.getClassByUser().subscribe(
+    this.classService.getClassList().subscribe(
       success => {
         console.log(success);
         this.classes = success;

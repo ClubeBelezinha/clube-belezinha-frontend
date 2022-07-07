@@ -40,15 +40,6 @@ export class ClassService extends BaseService {
       );
   }
 
-  getClassByUser(): Observable<ClassListResponseDto[]> {
-    return this.httpClient
-      .get(`${this.url}class/byUser/`, this.authorizedHeader())
-      .pipe(
-        map(this.extractData),
-        catchError(this.serviceError)
-      );
-  }
-
   registerClass(dto: ClassRegisterRequestDto): Observable<ClassRegisterRequestDto> {
     return this.httpClient
       .post(`${this.url}/class/registerClass`, dto, this.authorizedHeader())
@@ -58,6 +49,14 @@ export class ClassService extends BaseService {
       );
   }
 
+  getClassByUser(): Observable<StudentClassListResponseDto[]> {
+    return this.httpClient
+      .get(`${this.url}studentClass/byUser/`, this.authorizedHeader())
+      .pipe(
+        map(this.extractData),
+        catchError(this.serviceError)
+      );
+  }
   updateClass(dto: ClassChangeRequestDto): Observable<ClassChangeResponseDto> {
     return this.httpClient
       .put(`${this.url}class`,
