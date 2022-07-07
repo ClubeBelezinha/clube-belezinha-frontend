@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ClassChangeRequestDto } from 'src/app/dtos/class/class-update-request.dto';
 import { StudentClassRegisterRequestDto } from 'src/app/dtos/studentClass/student-class-register-request.dto';
 import { ClassService } from 'src/service/class.service';
@@ -23,7 +24,8 @@ export class SubscriptionPageComponent implements OnInit {
     this.paymentComponent = !this.paymentComponent;
   }
 
-  constructor(private route: ActivatedRoute, private classService: ClassService, private courseService: CourseService, private studentClass: StudentClassService, private formBuilder: FormBuilder,  private router: Router,) {
+  constructor(private route: ActivatedRoute,
+    private toastrService: ToastrService, private classService: ClassService, private courseService: CourseService, private studentClass: StudentClassService, private formBuilder: FormBuilder,  private router: Router,) {
     this.form = this.formBuilder.group({
       grade: ['', [Validators.required]],
       class: ['', [Validators.required]],
@@ -58,9 +60,13 @@ export class SubscriptionPageComponent implements OnInit {
               this.studentClass.registerStudentClass(this.request).subscribe(
                 success => {
                   this.router.navigate(['/studentsClass']);
-                  alert("Cadastrado com sucesso !")
+                  this.toastrService.success('Inscrição efetuada com sucesso!', 'Sucesso', {
+                    progressBar: true
+                  })
                 },
-                error =>  alert("Erro ao cadastrar !")
+                error =>  this.toastrService.error('Você já esta inscrito na turma!', 'Erro', {
+                  progressBar: true
+                })
                 
               );
               

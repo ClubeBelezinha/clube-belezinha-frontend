@@ -19,6 +19,8 @@ import { ClassesPageComponent } from './auth/class-page/classes-page.component';
 import { StudentClassesPageComponent } from './auth/student-class-page/student-classes-page.component';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './auth/dashboard/dashboard.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { DashboardComponent } from './auth/dashboard/dashboard.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     NgbModule,
     HttpClientModule,
     CommonModule

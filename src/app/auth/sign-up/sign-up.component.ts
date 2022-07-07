@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserRegisterRequestResponseDto } from 'src/app/dtos/user/user-register-request-response.dto';
 import { UserService } from 'src/service/user.service';
 
@@ -16,6 +17,7 @@ export class SignUpComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
+    private toastrService: ToastrService,
     private router: Router) {
     this.form = this.formBuilder.group({
       password: ['', [Validators.required]],
@@ -44,12 +46,20 @@ export class SignUpComponent implements OnInit {
         this.userService.register(this.request).subscribe(
           success => {
             this.router.navigate(['']);
-            alert("Usuário cadastrado com sucesso!")
+            this.toastrService.success('Usuário cadastrado com sucesso!', 'Sucesso', {
+              progressBar: true
+            })
+            
           },
-          error =>  alert("E-mail já cadastrado!")
+          error =>  this.toastrService.error('E-mail já cadastrado!', 'Negado', {
+            progressBar: true
+          })
+          
         );
       }else{
-        alert("Senhas diferentes!");
+        this.toastrService.error('Senhas estão diferentes!', 'Negado', {
+          progressBar: true
+        })
         
         return
       }
