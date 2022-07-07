@@ -48,6 +48,7 @@ export class SubscriptionPageComponent implements OnInit {
           classes = success;
           classes.numberPlaces = classes.numberPlaces - 1;
           const student = {
+            grade: "0",
             class: classes,
             course: classes.course
            }

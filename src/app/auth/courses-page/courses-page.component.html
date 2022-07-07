@@ -14,12 +14,12 @@
         </div>
 
         <div class="card-infos">
-          <p class="card-title">{{course.name}}</p>
-          <p class="card-subtext">Valor:R$ {{course.value}}</p>
-          <p class="card-subtext">Duração: {{course.workload}} horas</p>
-          <p class="card-subtext">Dias: {{classes.days}}</p>
-          <p class="card-subtext">Hora Inicio: {{classes.hourStart}}</p>
-          <p class="card-subtext">Término: {{classes.hourEnd}}</p>
+          <p class="card-title">{{course.name || ''}}</p>
+          <p class="card-subtext">Valor:R$ {{course.value || ''}}</p>
+          <p class="card-subtext">Duração: {{course.workload || ''}} horas</p>
+          <p class="card-subtext">Dias: {{classes.days || ''}}</p>
+          <p class="card-subtext">Hora Inicio: {{classes.hourStart || ''}}</p>
+          <p class="card-subtext">Término: {{classes.hourEnd || ''}}</p>
         </div>
       </div>
       <div>
